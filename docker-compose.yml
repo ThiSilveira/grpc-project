@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  app:
+    image: grpc-service
+    working_dir: /usr/src/app
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_started
+    ports:
+      - '50051:50051'
+    volumes:
+      - .:/usr/src/app
+    links:
+      - db:db
+    entrypoint: bash -c ./start.sh
+  db:
+    image: mysql:5.7.33
+    environment:
+      MYSQL_DATABASE: 'store'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_TCP_PORT: 3306
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-ppassword', '-uroot']
+      interval: 10s
+      timeout: 20s
+      retries: 10
+    command:
+      - mysqld
+      - --default_storage_engine=InnoDB
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8084:80
+volumes:
+  dbdata: null

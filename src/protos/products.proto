@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.routeguide";
+option java_outer_classname = "RouteGuideProto";
+option objc_class_prefix = "RTG";
+
+package productService;
+
+message Void {}
+
+// Interface exported by the server.
+service ProductService {
+  rpc listProducts (Void) returns (ProductList);
+  rpc findProduct (ProductId) returns (Product);
+  rpc createProduct (Product) returns (Product);
+  rpc updateProduct (Product) returns (Product);
+  rpc deleteProduct (ProductId) returns (result);
+}
+
+message ProductId {
+  int32 id = 1;
+}
+
+message Product {
+  int32 id = 1;
+  string name = 2;
+  int32 amount = 3;
+  string description = 4;
+}
+
+message ProductList {
+  repeated Product products = 1;
+}
+
+message result {
+  string status = 1;
+}

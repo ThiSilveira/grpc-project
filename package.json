@@ -1,0 +1,31 @@
+{
+  "name": "grpc-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "node ./src/server/index.js",
+    "db:migration": "npx prisma migrate dev --schema src/server/db/prisma/schema.prisma --name init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiSilveira/grpc-project.git"
+  },
+  "author": "Thiago Silveira de Araujo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiSilveira/grpc-project/issues"
+  },
+  "homepage": "https://github.com/ThiSilveira/grpc-project#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.1.0",
+    "@grpc/proto-loader": "^0.5.0",
+    "@prisma/client": "^3.11.1",
+    "async": "^1.5.2",
+    "dotenv": "^16.0.0",
+    "google-protobuf": "^3.0.0",
+    "lodash": "^4.6.1",
+    "minimist": "^1.2.0"
+  }
+}
