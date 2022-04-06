@@ -42,7 +42,7 @@ node app.js
 - [@thisilveira](https://github.com/ThiSilveira)
 
 
-## References
+## References and Learn More
 
  - [gRPC Documentation](https://www.grpc.io/docs/)
  - [Prisma Documentation](https://www.prisma.io/docs/)
