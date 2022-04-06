@@ -24,7 +24,7 @@ Run gPRC Client
 
 ```bash
 # Go to Postman API Platform 
-[Postman API Platform](https://www.postman.com/)
+[Postman API Platform](https://www.postman.com)
 
 # Create a gRPC request
     # Put a server URL
