@@ -25,7 +25,6 @@ Run gPRC Client
 ```bash
 # Go to Postman API Platform 
 [Postman API Platform](https://www.postman.com)
-[a link](https://github.com/user/repo/blob/branch/other_file.md)
 
 # Create a gRPC request
     # Put a server URL
