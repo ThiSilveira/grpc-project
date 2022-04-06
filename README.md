@@ -11,7 +11,7 @@ Run gPRC Server
 ```bash
 # Clone the repository
 git clone git@github.com:ThiSilveira/grpc-project.git
-cd grpc-project
+cd src/grpc-project
 
 # Copy the file .env.example to .env
 cp .env.example .env
@@ -32,7 +32,7 @@ Run gPRC Client
 
 #Or
 
-# Go to folder client and Run 
+# Go to folder client and Run app.js
 cd client
 node app.js
 ```

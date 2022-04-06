@@ -1,3 +1,5 @@
+const grpc = require('@grpc/grpc-js');
+
 const {
     PrismaClient
 } = require('@prisma/client');
@@ -21,7 +23,7 @@ const findProduct = async (call, callback) => {
         callback(null, product)
     } else {
         callback({
-            // code: grpc.status.NOT_FOUND,
+            code: grpc.status.NOT_FOUND,
             message: 'Requested resource was not found'
         })
     }
@@ -39,7 +41,7 @@ const createProduct = async (call, callback) => {
         callback(null, product)
     } catch (err) {
         callback({
-            // code: grpc.status.UNKNOWN,
+            code: grpc.status.UNKNOWN,
             message: err.message
         })
     }
@@ -60,7 +62,7 @@ const updateProduct = async (call, callback) => {
         callback(null, product)
     } catch (err) {
         callback({
-            // code: grpc.status.UNKNOWN,
+            code: grpc.status.UNKNOWN,
             message: err.message
         })
     }
@@ -76,7 +78,7 @@ const deleteProduct = async (call, callback) => {
         callback(null, product)
     } else {
         callback({
-            // code: grpc.status.NOT_FOUND,
+            code: grpc.status.NOT_FOUND,
             message: 'Requested resource was not found'
         })
     }
