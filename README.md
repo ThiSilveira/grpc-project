@@ -17,7 +17,8 @@ cd src/grpc-project
 cp .env.example .env
 
 # Run Docker
-docker-compose up
+docker build -t grpc-service .
+docker compose up
 ```
 
 Run gPRC Client

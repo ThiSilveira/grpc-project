@@ -38,7 +38,7 @@ const productService = grpc.loadPackageDefinition(packageDefinition).productServ
 
         routeServer.bindAsync(GRPC_HOST, grpc.ServerCredentials.createInsecure(), () => {
             routeServer.start();
-            console.log(">>>>>>  Running gRPC Server  <<<<<<")
+            console.log(`>>>>> 🚀  Server gRPC is running on ${GRPC_HOST} <<<<<`)
         });
     } catch (err) {
         throw err
